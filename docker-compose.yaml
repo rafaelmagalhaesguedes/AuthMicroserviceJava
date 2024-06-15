@@ -1,0 +1,11 @@
+services:
+
+  mysql:
+    container_name: auth-api
+    image: mysql:8.0.32
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: auth
