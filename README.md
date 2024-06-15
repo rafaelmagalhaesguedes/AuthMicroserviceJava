@@ -73,6 +73,3 @@ Base URL: http://localhost:8080
 
 ### Authenticate user
 ![created](screenshots/token.png)
-
-### Validate Request Body
-![created](screenshots/validation.png)
