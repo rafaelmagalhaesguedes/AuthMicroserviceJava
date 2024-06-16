@@ -29,7 +29,7 @@ to send emails, such as welcome emails upon successful user registration.
 
 - CRUD operations for user profiles.
 
-- Role-based access control (RBAC) with ADMIN and MANAGER roles.
+- Role-based access control (RBAC) with ADMIN, MANAGER and USER roles.
 
 ## Usage
   
