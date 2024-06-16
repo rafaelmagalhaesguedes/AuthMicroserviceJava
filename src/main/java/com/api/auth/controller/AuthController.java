@@ -4,7 +4,10 @@ import com.api.auth.controller.dto.AuthDto;
 import com.api.auth.controller.dto.TokenDto;
 import com.api.auth.service.TokenService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -37,20 +40,25 @@ public class AuthController {
   }
 
   /**
-   * Login token dto.
+   * Login response entity.
    *
    * @param authDto the auth dto
-   * @return the token dto
+   * @return the response entity
    */
   @PostMapping("/login")
-  public TokenDto login(@RequestBody AuthDto authDto) {
-    UsernamePasswordAuthenticationToken usernamePassword =
-        new UsernamePasswordAuthenticationToken(authDto.username(), authDto.password());
+  public ResponseEntity<TokenDto> login(@RequestBody AuthDto authDto) {
+    try {
+      UsernamePasswordAuthenticationToken usernamePassword =
+          new UsernamePasswordAuthenticationToken(authDto.username(), authDto.password());
 
-    Authentication auth = authenticationManager.authenticate(usernamePassword);
+      Authentication auth = authenticationManager.authenticate(usernamePassword);
 
-    String token = tokenService.generateToken(auth.getName());
+      String token = tokenService.generateToken(auth.getName());
 
-    return new TokenDto(token);
+      return ResponseEntity.ok(new TokenDto(token));
+    } catch (BadCredentialsException ex) {
+      return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+          .body(new TokenDto("Invalid username or password."));
+    }
   }
 }
