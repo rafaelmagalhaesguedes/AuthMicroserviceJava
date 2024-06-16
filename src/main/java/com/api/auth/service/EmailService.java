@@ -45,7 +45,10 @@ public class EmailService {
   }
 
   private String createWelcomeEmailText(Person user) {
-    return "Hello " + user.getFullName() + ",\n\nWelcome to our system! Your account has been created successfully\n.";
+    return "Hello "
+           + user.getFullName()
+           + ",\n\nWelcome to our system!"
+           + " Your account has been created successfully\n.";
   }
 }
 

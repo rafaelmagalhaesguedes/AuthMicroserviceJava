@@ -5,7 +5,6 @@ import com.api.auth.repository.PersonRepository;
 import com.api.auth.service.exception.DuplicateEmailException;
 import com.api.auth.service.exception.InvalidPersonDataException;
 import com.api.auth.service.exception.PersonNotFoundException;
-import com.api.auth.utils.PersonValidator;
 import jakarta.transaction.Transactional;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,21 +21,18 @@ import org.springframework.stereotype.Service;
 public class PersonService implements UserDetailsService {
 
   private final PersonRepository personRepository;
-  private final PersonValidator personValidator;
   private final EmailService emailService;
 
   /**
    * Instantiates a new Person service.
    *
    * @param personRepository the person repository
-   * @param personValidator  the person validator
    * @param emailService     the email service
    */
   @Autowired
-  public PersonService(PersonRepository personRepository, PersonValidator personValidator,
+  public PersonService(PersonRepository personRepository,
       EmailService emailService) {
     this.personRepository = personRepository;
-    this.personValidator = personValidator;
     this.emailService = emailService;
   }
 
@@ -49,15 +45,10 @@ public class PersonService implements UserDetailsService {
    */
   @Transactional
   public Person save(Person person) throws InvalidPersonDataException {
-    personValidator.validatePersonData(person);
     validateEmail(person.getEmail());
-
-    String hashPassword = new BCryptPasswordEncoder().encode(person.getPassword());
-    person.setPassword(hashPassword);
-
+    hashPassword(person);
     personRepository.save(person);
     emailService.sendWelcomeEmail(person);
-
     return person;
   }
 
@@ -82,10 +73,17 @@ public class PersonService implements UserDetailsService {
         .orElseThrow(PersonNotFoundException::new);
   }
 
-  private void validateEmail(String email) {
+  private void validateEmail(String email) throws InvalidPersonDataException {
     if (personRepository.findByEmail(email).isPresent()) {
       throw new DuplicateEmailException();
     }
+  }
+
+  private void hashPassword(Person person) {
+    String hashPassword = new BCryptPasswordEncoder()
+        .encode(person.getPassword());
+
+    person.setPassword(hashPassword);
   }
 
   @Override

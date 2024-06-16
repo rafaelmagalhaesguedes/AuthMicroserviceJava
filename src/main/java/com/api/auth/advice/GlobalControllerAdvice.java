@@ -12,13 +12,13 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 /**
- * The type Global controller advice.
+ * Global exception handler for the API.
  */
 @ControllerAdvice
 public class GlobalControllerAdvice {
 
   /**
-   * Handle not found response entity.
+   * Handle NotFoundException.
    *
    * @param exception the exception
    * @return the response entity
@@ -30,7 +30,7 @@ public class GlobalControllerAdvice {
   }
 
   /**
-   * Handle MethodArgumentNotValidException response entity.
+   * Handle MethodArgumentNotValidException.
    *
    * @param ex the exception
    * @return the response entity
@@ -47,7 +47,7 @@ public class GlobalControllerAdvice {
   }
 
   /**
-   * Handle DuplicateEmailException response entity.
+   * Handle DuplicateEmailException.
    *
    * @param ex the exception
    * @return the response entity
@@ -59,7 +59,7 @@ public class GlobalControllerAdvice {
   }
 
   /**
-   * Handle other exceptions.
+   * Handle generic exceptions.
    *
    * @param ex the exception
    * @return the response entity

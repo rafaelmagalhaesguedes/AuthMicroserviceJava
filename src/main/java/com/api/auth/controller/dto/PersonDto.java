@@ -3,7 +3,7 @@ package com.api.auth.controller.dto;
 import com.api.auth.entity.Person;
 
 /**
- * The type Person dto.
+ * DTO for person data.
  */
 public record PersonDto(
     Long id,
@@ -13,9 +13,9 @@ public record PersonDto(
 ) {
 
   /**
-   * From entity person dto.
+   * Convert from Person entity.
    *
-   * @param person the person
+   * @param person the person entity
    * @return the person dto
    */
   public static PersonDto fromEntity(Person person) {

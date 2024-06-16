@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * The type Person controller.
+ * REST controller for managing persons.
  */
 @RestController
 @RequestMapping("/persons")
@@ -41,10 +41,11 @@ public class PersonController {
   }
 
   /**
-   * Create person dto.
+   * Create a new person.
    *
    * @param personCreationDto the person creation dto
-   * @return the person dto
+   * @return the created person dto
+   * @throws InvalidPersonDataException if the person data is invalid
    */
   @PostMapping
   @ResponseStatus(HttpStatus.CREATED)
@@ -55,9 +56,9 @@ public class PersonController {
   }
 
   /**
-   * Find all persons list.
+   * Get all persons.
    *
-   * @return the list
+   * @return the list of persons
    */
   @GetMapping
   @PreAuthorize("hasAnyAuthority('ADMIN', 'MANAGER')")
@@ -69,11 +70,11 @@ public class PersonController {
   }
 
   /**
-   * Find person by id person dto.
+   * Get person by ID.
    *
-   * @param id the id
+   * @param id the person ID
    * @return the person dto
-   * @throws PersonNotFoundException the person not found exception
+   * @throws PersonNotFoundException if the person is not found
    */
   @GetMapping("/{id}")
   @PreAuthorize("hasAnyAuthority('ADMIN', 'MANAGER')")
