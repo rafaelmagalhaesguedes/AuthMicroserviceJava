@@ -1,8 +1,10 @@
 package com.api.auth.controller.dto;
 
 import com.api.auth.entity.Person;
+import com.api.auth.security.Role;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 /**
@@ -23,8 +25,8 @@ public record PersonCreationDto(
     @Size(min = 8, message = "Password must be at least 8 characters long")
     String password,
 
-    @NotBlank(message = "Role is required")
-    String role
+    @NotNull(message = "Role is required")
+    Role role
 ) {
 
   /**

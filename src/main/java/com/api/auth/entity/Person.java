@@ -1,9 +1,11 @@
 package com.api.auth.entity;
 
+import com.api.auth.security.Role;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import java.util.Collection;
@@ -29,7 +31,9 @@ public class Person implements UserDetails {
   @Column(unique = true)
   private String email;
   private String password;
-  private String role;
+
+  @Enumerated(EnumType.STRING)
+  private Role role;
 
   /**
    * Instantiates a new Person.
@@ -45,7 +49,7 @@ public class Person implements UserDetails {
    * @param password the password
    * @param role     the role
    */
-  public Person(String fullName, String username, String email, String password, String role) {
+  public Person(String fullName, String username, String email, String password, Role role) {
     this.fullName = fullName;
     this.username = username;
     this.email = email;
@@ -112,7 +116,7 @@ public class Person implements UserDetails {
    *
    * @return the role
    */
-  public String getRole() {
+  public Role getRole() {
     return role;
   }
 
@@ -121,13 +125,13 @@ public class Person implements UserDetails {
    *
    * @param role the role
    */
-  public void setRole(String role) {
+  public void setRole(Role role) {
     this.role = role;
   }
 
   @Override
   public Collection<? extends GrantedAuthority> getAuthorities() {
-    return List.of(new SimpleGrantedAuthority(role));
+    return List.of(new SimpleGrantedAuthority(role.getName()));
   }
 
   /**

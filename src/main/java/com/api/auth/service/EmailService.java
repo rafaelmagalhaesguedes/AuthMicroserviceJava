@@ -40,7 +40,7 @@ public class EmailService {
 
       javaMailSender.send(message);
     } catch (MessagingException e) {
-      e.printStackTrace();
+      e.getMessage();
     }
   }
 
