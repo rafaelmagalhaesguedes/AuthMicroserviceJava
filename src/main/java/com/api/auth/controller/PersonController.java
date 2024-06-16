@@ -8,6 +8,7 @@ import com.api.auth.service.exception.InvalidPersonDataException;
 import com.api.auth.service.exception.PersonNotFoundException;
 import jakarta.validation.Valid;
 import java.util.List;
+import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -78,7 +79,7 @@ public class PersonController {
    */
   @GetMapping("/{id}")
   @PreAuthorize("hasAnyAuthority('ADMIN', 'MANAGER')")
-  public PersonDto findPersonById(@PathVariable Long id) throws PersonNotFoundException {
+  public PersonDto findPersonById(@PathVariable UUID id) throws PersonNotFoundException {
     return PersonDto.fromEntity(personService.findById(id));
   }
 }

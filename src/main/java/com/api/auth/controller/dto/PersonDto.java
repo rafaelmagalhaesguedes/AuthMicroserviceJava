@@ -1,12 +1,13 @@
 package com.api.auth.controller.dto;
 
 import com.api.auth.entity.Person;
+import java.util.UUID;
 
 /**
  * DTO for person data.
  */
 public record PersonDto(
-    Long id,
+    UUID id,
     String fullName,
     String username,
     String email

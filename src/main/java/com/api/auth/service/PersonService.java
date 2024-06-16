@@ -7,6 +7,7 @@ import com.api.auth.service.exception.InvalidPersonDataException;
 import com.api.auth.service.exception.PersonNotFoundException;
 import jakarta.transaction.Transactional;
 import java.util.List;
+import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -68,7 +69,7 @@ public class PersonService implements UserDetailsService {
    * @return the person
    * @throws PersonNotFoundException the person not found exception
    */
-  public Person findById(Long id) throws PersonNotFoundException {
+  public Person findById(UUID id) throws PersonNotFoundException {
     return personRepository.findById(id)
         .orElseThrow(PersonNotFoundException::new);
   }

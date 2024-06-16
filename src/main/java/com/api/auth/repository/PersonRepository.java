@@ -2,6 +2,7 @@ package com.api.auth.repository;
 
 import com.api.auth.entity.Person;
 import java.util.Optional;
+import java.util.UUID;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -9,7 +10,7 @@ import org.springframework.stereotype.Repository;
  * The interface Person repository.
  */
 @Repository
-public interface PersonRepository extends JpaRepository<Person, Long> {
+public interface PersonRepository extends JpaRepository<Person, UUID> {
 
   /**
    * Find by username optional.
