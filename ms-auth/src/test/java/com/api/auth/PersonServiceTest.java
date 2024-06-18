@@ -13,6 +13,10 @@ import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 
 import java.util.Optional;
 import java.util.UUID;
@@ -85,10 +89,15 @@ public class PersonServiceTest {
     persons.add(createPerson(UUID.randomUUID(), "John Doe", "john@example.com", "password", Role.USER));
     persons.add(createPerson(UUID.randomUUID(), "Jane Smith", "jane@example.com", "password", Role.USER));
 
-    Mockito.when(personRepository.findAll()).thenReturn(persons);
+    int pageNumber = 0;
+    int pageSize = 2;
+    PageRequest pageRequest = PageRequest.of(pageNumber, pageSize);
+    Page<Person> page = new PageImpl<>(persons, pageRequest, persons.size());
+
+    Mockito.when(personRepository.findAll(pageRequest)).thenReturn(page);
 
     // When
-    List<Person> foundPersons = personService.findAll();
+    List<Person> foundPersons = personService.findAll(pageNumber, pageSize);
 
     // Then
     assertEquals(persons.size(), foundPersons.size());
@@ -101,16 +110,19 @@ public class PersonServiceTest {
     assertEquals(persons.get(0).getRole(), foundPersons.get(0).getRole());
     assertEquals(persons.get(1).getRole(), foundPersons.get(1).getRole());
   }
-
   @Test
   public void testFindAllPersonsEmptyList() {
     // Given
     List<Person> persons = new ArrayList<>();
+    int pageNumber = 0;
+    int pageSize = 2;
+    PageRequest pageRequest = PageRequest.of(pageNumber, pageSize);
+    Page<Person> page = new PageImpl<>(persons, pageRequest, persons.size());
 
-    Mockito.when(personRepository.findAll()).thenReturn(persons);
+    Mockito.when(personRepository.findAll(pageRequest)).thenReturn(page);
 
     // When
-    List<Person> foundPersons = personService.findAll();
+    List<Person> foundPersons = personService.findAll(pageNumber, pageSize);
 
     // Then
     assertEquals(persons.size(), foundPersons.size());
