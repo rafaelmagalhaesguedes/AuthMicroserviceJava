@@ -1,6 +1,6 @@
-package com.api.auth.entity;
+package com.api.auth.entities;
 
-import com.api.auth.security.Role;
+import com.api.auth.securities.Role;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;

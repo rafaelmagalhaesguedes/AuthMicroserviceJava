@@ -1,6 +1,6 @@
 package com.email.services;
 
-import com.email.entity.Email;
+import com.email.entities.Email;
 import com.email.enums.StatusEmail;
 import com.email.repositories.EmailRepository;
 import jakarta.transaction.Transactional;

@@ -1,4 +1,4 @@
-package com.api.auth.security;
+package com.api.auth.securities;
 
 /**
  * Enum representing a Role.

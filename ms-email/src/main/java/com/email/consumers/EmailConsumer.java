@@ -1,7 +1,7 @@
 package com.email.consumers;
 
 import com.email.dtos.EmailRecordDto;
-import com.email.entity.Email;
+import com.email.entities.Email;
 import com.email.services.EmailService;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.BeanUtils;

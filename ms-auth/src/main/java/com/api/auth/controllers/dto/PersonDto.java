@@ -1,6 +1,6 @@
-package com.api.auth.controller.dto;
+package com.api.auth.controllers.dto;
 
-import com.api.auth.entity.Person;
+import com.api.auth.entities.Person;
 import java.util.UUID;
 
 /**

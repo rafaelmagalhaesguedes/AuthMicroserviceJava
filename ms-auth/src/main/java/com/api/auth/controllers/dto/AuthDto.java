@@ -1,4 +1,4 @@
-package com.api.auth.controller.dto;
+package com.api.auth.controllers.dto;
 
 /**
  * The type Auth dto.

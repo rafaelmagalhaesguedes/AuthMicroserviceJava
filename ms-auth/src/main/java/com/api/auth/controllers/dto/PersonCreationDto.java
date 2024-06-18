@@ -1,7 +1,7 @@
-package com.api.auth.controller.dto;
+package com.api.auth.controllers.dto;
 
-import com.api.auth.entity.Person;
-import com.api.auth.security.Role;
+import com.api.auth.entities.Person;
+import com.api.auth.securities.Role;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

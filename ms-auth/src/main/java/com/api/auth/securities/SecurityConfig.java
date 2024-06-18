@@ -1,4 +1,4 @@
-package com.api.auth.security;
+package com.api.auth.securities;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

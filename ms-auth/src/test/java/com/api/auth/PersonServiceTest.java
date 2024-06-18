@@ -1,11 +1,11 @@
 package com.api.auth;
 
-import com.api.auth.entity.Person;
-import com.api.auth.repository.PersonRepository;
-import com.api.auth.security.Role;
-import com.api.auth.service.PersonService;
-import com.api.auth.service.exception.InvalidPersonDataException;
-import com.api.auth.service.exception.PersonNotFoundException;
+import com.api.auth.entities.Person;
+import com.api.auth.repositories.PersonRepository;
+import com.api.auth.securities.Role;
+import com.api.auth.services.PersonService;
+import com.api.auth.services.exception.InvalidPersonDataException;
+import com.api.auth.services.exception.PersonNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.Test;

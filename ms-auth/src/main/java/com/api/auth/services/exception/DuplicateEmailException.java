@@ -1,4 +1,4 @@
-package com.api.auth.service.exception;
+package com.api.auth.services.exception;
 
 /**
  * The type Duplicate email exception.

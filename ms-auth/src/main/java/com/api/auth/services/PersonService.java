@@ -1,11 +1,11 @@
-package com.api.auth.service;
+package com.api.auth.services;
 
-import com.api.auth.entity.Person;
+import com.api.auth.entities.Person;
 import com.api.auth.producers.UserProducer;
-import com.api.auth.repository.PersonRepository;
-import com.api.auth.service.exception.DuplicateEmailException;
-import com.api.auth.service.exception.InvalidPersonDataException;
-import com.api.auth.service.exception.PersonNotFoundException;
+import com.api.auth.repositories.PersonRepository;
+import com.api.auth.services.exception.DuplicateEmailException;
+import com.api.auth.services.exception.InvalidPersonDataException;
+import com.api.auth.services.exception.PersonNotFoundException;
 import jakarta.transaction.Transactional;
 import java.util.List;
 import java.util.UUID;

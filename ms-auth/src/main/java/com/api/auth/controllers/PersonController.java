@@ -1,11 +1,11 @@
-package com.api.auth.controller;
+package com.api.auth.controllers;
 
-import com.api.auth.controller.dto.PersonCreationDto;
-import com.api.auth.controller.dto.PersonDto;
-import com.api.auth.entity.Person;
-import com.api.auth.service.PersonService;
-import com.api.auth.service.exception.InvalidPersonDataException;
-import com.api.auth.service.exception.PersonNotFoundException;
+import com.api.auth.controllers.dto.PersonCreationDto;
+import com.api.auth.controllers.dto.PersonDto;
+import com.api.auth.entities.Person;
+import com.api.auth.services.PersonService;
+import com.api.auth.services.exception.InvalidPersonDataException;
+import com.api.auth.services.exception.PersonNotFoundException;
 import jakarta.validation.Valid;
 import java.util.List;
 import java.util.UUID;

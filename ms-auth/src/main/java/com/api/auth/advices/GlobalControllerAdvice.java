@@ -1,7 +1,7 @@
-package com.api.auth.advice;
+package com.api.auth.advices;
 
-import com.api.auth.service.exception.DuplicateEmailException;
-import com.api.auth.service.exception.NotFoundException;
+import com.api.auth.services.exception.DuplicateEmailException;
+import com.api.auth.services.exception.NotFoundException;
 import java.util.HashMap;
 import java.util.Map;
 import org.springframework.http.HttpStatus;

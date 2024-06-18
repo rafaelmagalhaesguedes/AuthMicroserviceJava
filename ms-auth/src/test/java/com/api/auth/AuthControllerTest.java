@@ -1,7 +1,7 @@
 package com.api.auth;
 
-import com.api.auth.controller.dto.AuthDto;
-import com.api.auth.service.TokenService;
+import com.api.auth.controllers.dto.AuthDto;
+import com.api.auth.services.TokenService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

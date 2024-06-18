@@ -1,9 +1,8 @@
 package com.api.auth.producers;
 
-import com.api.auth.controller.dto.EmailDto;
-import com.api.auth.entity.Person;
+import com.api.auth.controllers.dto.EmailDto;
+import com.api.auth.entities.Person;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 

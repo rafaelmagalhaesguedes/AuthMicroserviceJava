@@ -1,6 +1,6 @@
 package com.email.repositories;
 
-import com.email.entity.Email;
+import com.email.entities.Email;
 import java.util.UUID;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

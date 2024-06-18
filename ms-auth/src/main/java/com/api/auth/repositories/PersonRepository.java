@@ -1,6 +1,6 @@
-package com.api.auth.repository;
+package com.api.auth.repositories;
 
-import com.api.auth.entity.Person;
+import com.api.auth.entities.Person;
 import java.util.Optional;
 import java.util.UUID;
 import org.springframework.data.jpa.repository.JpaRepository;

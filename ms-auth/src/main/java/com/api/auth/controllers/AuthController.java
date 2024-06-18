@@ -1,8 +1,8 @@
-package com.api.auth.controller;
+package com.api.auth.controllers;
 
-import com.api.auth.controller.dto.AuthDto;
-import com.api.auth.controller.dto.TokenDto;
-import com.api.auth.service.TokenService;
+import com.api.auth.controllers.dto.AuthDto;
+import com.api.auth.controllers.dto.TokenDto;
+import com.api.auth.services.TokenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

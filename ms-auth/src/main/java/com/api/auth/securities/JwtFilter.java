@@ -1,7 +1,7 @@
-package com.api.auth.security;
+package com.api.auth.securities;
 
-import com.api.auth.service.PersonService;
-import com.api.auth.service.TokenService;
+import com.api.auth.services.PersonService;
+import com.api.auth.services.TokenService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
