@@ -1,7 +1,10 @@
 # Sistema de Autenticação com JWT e RabbitMQ
 
 ## Visão Geral
-Este projeto é um sistema de autenticação que utiliza JSON Web Tokens (JWT) para autenticação e RabbitMQ para envio de emails. Ele foi desenvolvido usando Spring Boot e inclui as seguintes funcionalidades:
+AuthRabbit é um sistema de autenticação que utiliza JSON Web Tokens (JWT) para autenticação
+e RabbitMQ para envio de emails. Ele foi desenvolvido usando Spring Boot e segue a arquitetura
+de microserviços, dividindo a funcionalidade de autenticação e envio de emails em serviços
+independentes. Este sistema inclui as seguintes funcionalidades:
 
 - Registro de novos usuários
 
