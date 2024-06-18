@@ -7,17 +7,30 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * The type Rabbit mq config.
+ */
 @Configuration
 public class RabbitMQConfig {
 
   @Value("${broker.queue.email.name}")
   private String queue;
 
+  /**
+   * Queue queue.
+   *
+   * @return the queue
+   */
   @Bean
   public Queue queue() {
     return new Queue(queue, true);
   }
 
+  /**
+   * Message converter jackson 2 json message converter.
+   *
+   * @return the jackson 2 json message converter
+   */
   @Bean
   public Jackson2JsonMessageConverter messageConverter() {
     ObjectMapper objectMapper = new ObjectMapper();

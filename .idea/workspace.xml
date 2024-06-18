@@ -4,7 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="578b3e64-4e60-4b23-8a74-78164a492591" name="Changes" comment="feat: ms-auth dir created to auth microservice" />
+    <list default="true" id="578b3e64-4e60-4b23-8a74-78164a492591" name="Changes" comment="fix: rename dir ms-auth and ms-email microservices">
+      <change beforePath="$PROJECT_DIR$/ms-auth/ms-auth/src/main/java/com/api/auth/advice/GlobalControllerAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-auth/ms-auth/src/main/java/com/api/auth/advices/GlobalControllerAdvice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-auth/ms-auth/src/main/java/com/api/auth/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-auth/ms-auth/src/main/java/com/api/auth/controllers/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-auth/ms-auth/src/main/java/com/api/auth/controller/PersonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-auth/ms-auth/src/main/java/com/api/auth/controllers/PersonController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-auth/ms-auth/src/main/java/com/api/auth/controller/dto/AuthDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-auth/ms-auth/src/main/java/com/api/auth/controllers/dto/AuthDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-auth/ms-auth/src/main/java/com/api/auth/controller/dto/EmailDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-auth/ms-auth/src/main/java/com/api/auth/controllers/dto/EmailDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-auth/ms-auth/src/main/java/com/api/auth/controller/dto/PersonCreationDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-auth/ms-auth/src/main/java/com/api/auth/controllers/dto/PersonCreationDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-auth/ms-auth/src/main/java/com/api/auth/controller/dto/PersonDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-auth/ms-auth/src/main/java/com/api/auth/controllers/dto/PersonDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-auth/ms-auth/src/main/java/com/api/auth/controller/dto/TokenDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-auth/ms-auth/src/main/java/com/api/auth/controllers/dto/TokenDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-auth/ms-auth/src/main/java/com/api/auth/entity/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-auth/ms-auth/src/main/java/com/api/auth/entities/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-auth/ms-auth/src/main/java/com/api/auth/repository/PersonRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-auth/ms-auth/src/main/java/com/api/auth/repositories/PersonRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-auth/ms-auth/src/main/java/com/api/auth/security/JwtFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-auth/ms-auth/src/main/java/com/api/auth/securities/JwtFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-auth/ms-auth/src/main/java/com/api/auth/security/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-auth/ms-auth/src/main/java/com/api/auth/securities/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-auth/ms-auth/src/main/java/com/api/auth/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-auth/ms-auth/src/main/java/com/api/auth/securities/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-auth/ms-auth/src/main/java/com/api/auth/service/PersonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-auth/ms-auth/src/main/java/com/api/auth/services/PersonService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-auth/ms-auth/src/main/java/com/api/auth/service/TokenService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-auth/ms-auth/src/main/java/com/api/auth/services/TokenService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-auth/ms-auth/src/main/java/com/api/auth/service/exception/DuplicateEmailException.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-auth/ms-auth/src/main/java/com/api/auth/services/exception/DuplicateEmailException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-auth/ms-auth/src/main/java/com/api/auth/service/exception/InvalidPersonDataException.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-auth/ms-auth/src/main/java/com/api/auth/services/exception/InvalidPersonDataException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-auth/ms-auth/src/main/java/com/api/auth/service/exception/NotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-auth/ms-auth/src/main/java/com/api/auth/services/exception/NotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-auth/ms-auth/src/main/java/com/api/auth/service/exception/PersonNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-auth/ms-auth/src/main/java/com/api/auth/services/exception/PersonNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-auth/ms-auth/src/test/java/com/api/auth/AuthControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-auth/ms-auth/src/test/java/com/api/auth/AuthControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-auth/ms-auth/src/test/java/com/api/auth/PersonServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-auth/ms-auth/src/test/java/com/api/auth/PersonServiceTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -136,7 +158,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: ms-auth dir created to auth microservice" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: ms-auth dir created to auth microservice" />
+    <MESSAGE value="fix: rename dir ms-auth and ms-email microservices" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: rename dir ms-auth and ms-email microservices" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

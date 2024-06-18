@@ -11,12 +11,27 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
+/**
+ * The type Email service.
+ */
 @Service
 public class EmailService {
 
+  /**
+   * The Email repository.
+   */
   final EmailRepository emailRepository;
+  /**
+   * The Java mail sender.
+   */
   final JavaMailSender javaMailSender;
 
+  /**
+   * Instantiates a new Email service.
+   *
+   * @param emailRepository the email repository
+   * @param javaMailSender  the java mail sender
+   */
   public EmailService(EmailRepository emailRepository, JavaMailSender javaMailSender) {
     this.emailRepository = emailRepository;
     this.javaMailSender = javaMailSender;
@@ -25,12 +40,17 @@ public class EmailService {
   @Value(value = "${spring.mail.username}")
   private String emailFrom;
 
+  /**
+   * Send email email.
+   *
+   * @param email the email
+   */
   @Transactional
-  public Email sendEmail(Email email) {
-    try {
-      email.setSendDateEmail(LocalDateTime.now());
-      email.setEmailFrom(emailFrom);
+  public void sendEmail(Email email) {
+    email.setSendDateEmail(LocalDateTime.now());
+    email.setEmailFrom(emailFrom);
 
+    try {
       SimpleMailMessage message = new SimpleMailMessage();
       message.setTo(email.getEmailTo());
       message.setSubject(email.getSubject());
@@ -40,8 +60,8 @@ public class EmailService {
       email.setStatusEmail(StatusEmail.SENT);
     } catch (MailException e) {
       email.setStatusEmail(StatusEmail.ERROR);
-    } finally {
-      return emailRepository.save(email);
     }
+
+    emailRepository.save(email);
   }
 }
