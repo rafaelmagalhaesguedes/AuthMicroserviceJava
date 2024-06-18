@@ -58,6 +58,20 @@ cd seu-repositorio
 
 - security: Contém as configurações de segurança e classes relacionadas ao JWT.
 
+## Arquitetura de Microserviços
+
+### Microserviço de Autenticação
+
+O microserviço de autenticação é responsável pelo registro e autenticação dos usuários,
+bem como pela geração e verificação de tokens JWT. Ele expõe endpoints REST para essas
+funcionalidades e publica eventos de cadastro de novos usuários na fila RabbitMQ.
+
+### Microserviço de Envio de Email
+
+O microserviço de envio de email consome eventos da fila RabbitMQ e envia emails de boas-vindas
+para os novos usuários. Ele escuta a fila configurada e utiliza as informações dos eventos para
+compor e enviar os emails.
+
 ## Como Executar
 
 1. ***Certifique-se de que o RabbitMQ e o banco de dados estão em execução.***
