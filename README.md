@@ -93,3 +93,25 @@ compor e enviar os emails.
 - POST /persons: Registro de um novo usuário.
 
 - GET /persons: Obter informações do usuário autenticado (requer token JWT).
+
+## Prints do fluxo
+
+### Registrar usuário
+
+![register](screenshots/created.png)
+
+### Autenticação
+
+![token](screenshots/token.png)
+
+### Email enviado ao usuário
+
+![sended](screenshots/sendEmail.png)
+
+### Email recebido na fila da cloud
+
+![queue](screenshots/queue.png)
+
+### Payload do Email recebido
+
+![queue](screenshots/payload.png)
