@@ -104,10 +104,6 @@ compor e enviar os emails.
 
 ![token](screenshots/token.png)
 
-### Email enviado ao usuário
-
-![sended](screenshots/sendEmail.png)
-
 ### Email recebido na fila da cloud
 
 ![queue](screenshots/queue.png)
@@ -115,3 +111,7 @@ compor e enviar os emails.
 ### Payload do Email recebido
 
 ![queue](screenshots/payload.png)
+
+### Email enviado ao usuário
+
+![sended](screenshots/sendEmail.png)
