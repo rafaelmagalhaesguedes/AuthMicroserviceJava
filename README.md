@@ -1,7 +1,7 @@
-# Sistema de Autenticação com JWT e RabbitMQ
+# Microsserviço de Autenticação com JWT e RabbitMQ
 
 ## Visão Geral
-Sistema de Autenticação que utiliza JSON Web Tokens (JWT) e RabbitMQ para envio de emails.
+Microsserviço de Autenticação que utiliza JSON Web Tokens (JWT) e RabbitMQ para envio de emails.
 Ele foi desenvolvido usando Spring Boot e segue a arquitetura de microsserviços, dividindo
 a funcionalidade de autenticação e envio de emails em serviços independentes.
 Este sistema inclui as seguintes funcionalidades:
